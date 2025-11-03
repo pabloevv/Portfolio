@@ -1,0 +1,242 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #f1f4ff;
+  background: linear-gradient(135deg, #161821 0%, #34394d 45%, #444a62 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: linear-gradient(
+    135deg,
+    rgba(14, 16, 26, 0.92) 0%,
+    rgba(42, 45, 62, 0.88) 60%,
+    rgba(74, 80, 114, 0.82) 100%
+  );
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ulacit {
+  width: 100%;
+  height: auto;
+  
+}
+.certificados{
+  width: 30%;
+  height: auto;
+}
+
+
+.nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(12px, 3vw, 20px) clamp(16px, 5vw, 36px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(12px, 4vw, 36px);
+}
+
+.nav__brand {
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.nav__list {
+  display: flex;
+  gap: clamp(12px, 2.5vw, 24px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  padding: 6px 14px;
+  border-radius: 999px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.nav__link:hover,
+.nav__link:focus-visible {
+  background-color: rgba(233, 237, 255, 0.16);
+  color: #ffffff;
+}
+
+main {
+  width: min(960px, 92vw);
+  margin: 0 auto;
+  padding: clamp(48px, 10vw, 80px) 0 clamp(56px, 12vw, 96px);
+  display: grid;
+  gap: clamp(32px, 8vw, 48px);
+}
+
+.section-header {
+  margin-bottom: clamp(20px, 5vw, 28px);
+}
+
+.section-title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: 0.08em;
+}
+
+.card {
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(
+    135deg,
+    rgba(31, 35, 51, 0.78),
+    rgba(20, 23, 36, 0.94)
+  );
+  padding: clamp(28px, 6vw, 40px);
+  display: grid;
+  gap: clamp(28px, 6vw, 40px);
+}
+
+.placeholder {
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: transparent;
+  color: rgba(233, 237, 255, 0.7);
+  text-align: center;
+  padding: 0;
+  min-height: clamp(160px, 34vw, 220px);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  
+}
+
+.education-details {
+  display: grid;
+  gap: clamp(16px, 4vw, 24px);
+}
+
+.education-title {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+  letter-spacing: 0.06em;
+}
+
+.education-institution {
+  margin: 0;
+  font-size: clamp(1rem, 2.2vw, 1.1rem);
+  color: rgba(233, 237, 255, 0.7);
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: clamp(20px, 5vw, 32px);
+  align-items: center;
+}
+
+.timeline__date {
+  display: grid;
+  gap: 6px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.timeline__month {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+}
+
+.timeline__year {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  color: rgba(233, 237, 255, 0.75);
+}
+
+.timeline__track {
+  position: relative;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(233, 237, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(16px, 4vw, 24px);
+}
+
+.timeline__dot {
+  width: clamp(26px, 6vw, 32px);
+  height: clamp(26px, 6vw, 32px);
+  border-radius: 50%;
+  border: 4px solid rgba(233, 237, 255, 0.85);
+  background: rgba(20, 23, 36, 0.95);
+  box-shadow: 0 0 0 4px rgba(233, 237, 255, 0.18);
+}
+
+.section-divider {
+  height: 1px;
+  background: rgba(233, 237, 255, 0.2);
+  margin: clamp(12px, 3vw, 16px) 0;
+}
+
+.certificate-card {
+  display: grid;
+  gap: clamp(20px, 5vw, 32px);
+  align-items: start;
+}
+
+.certificate-info {
+  display: grid;
+  gap: clamp(12px, 3vw, 16px);
+}
+
+.certificate-title {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: 0.08em;
+}
+
+.certificate-text {
+  margin: 0;
+  color: rgba(233, 237, 255, 0.72);
+  line-height: 1.5;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+}
+
+@media (max-width: 720px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card {
+    padding: clamp(24px, 10vw, 32px);
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .timeline__track {
+    width: 100%;
+    margin: 12px 0;
+  }
+
+  .certificate-card {
+    text-align: center;
+  }
+}
