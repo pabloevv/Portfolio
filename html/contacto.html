@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto | Porfolio - Pablo Valenciano</title>
+    <link rel="stylesheet" href="../css/contacto.css" />
+    <link rel="icon" type="image/svg" href="../img/favicon.svg" />
+  </head>
+  <body>
+    <header class="cabecera">
+      <nav class="nav">
+        <a class="nav__brand" href="../index.html">Porfolio - Pablo Valenciano</a>
+        <ul class="nav__list">
+          <li><a class="nav__link" href="../index.html">SUMMARY</a></li>
+          <li><a class="nav__link" href="../html/key.html">KEY COMPETENCIES &amp; SKILLS</a></li>
+          <li><a class="nav__link" href="../html/education.html">EDUCATION</a></li>
+          <li><a class="nav__link nav__link--active" href="../html/contacto.html">CONTACTO</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Conversemos</p>
+          <h1 class="hero__title">¿Proyecto freelance o contratación empresarial?</h1>
+          <p class="hero__subtitle">
+            Elegí el camino que mejor se adapte a tu necesidad y envía la información clave para que la reciba directamente en Firebase.
+          </p>
+          <div class="hero__tags">
+            <span class="pill">Respuestas en 24h</span>
+          </div>
+          <div class="hero__contacts">
+            <a class="hero__contact" href="mailto:upabloevv@gmail.com">upabloevv@gmail.com</a>
+            <a class="hero__contact" href="tel:+50685607619">+506 85607619</a>
+            <a class="hero__contact" href="https://www.linkedin.com/in/tipablovalenciano" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/tipablovalenciano</a>
+          </div>
+        </div>
+        <div class="hero__aside">
+          <div class="hero__card">
+            <p class="hero__card-title">Formulario con dos rutas</p>
+            <ul class="hero__list">
+              <li>Empresa: datos de contacto y vacante/servicio.</li>
+              <li>Proyecto freelance: alcance, presupuesto y plazo.</li>
+              <li>Todo se guarda en Firestore con sello de tiempo.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="paths">
+        <div class="paths__intro">
+          <h2>Elegí el tipo de colaboración</h2>
+          <p>Seleccioná si representás a una empresa o si querés apoyo freelance. El formulario cambia automáticamente para pedir solo lo necesario.</p>
+        </div>
+        <div class="paths__grid">
+          <article class="path-card">
+            <div class="path-card__icon" aria-hidden="true">🏢</div>
+            <h3>Empresa</h3>
+            <p>Comparte datos de la organización, área y el reto que querés resolver.</p>
+            <ul>
+              <li>Nombre y rol</li>
+              <li>Empresa y tamaño del equipo</li>
+              <li>Descripción de la vacante o proyecto</li>
+            </ul>
+          </article>
+          <article class="path-card">
+            <div class="path-card__icon" aria-hidden="true">💻</div>
+            <h3>Proyecto freelance</h3>
+            <p>Contame sobre el alcance del proyecto, presupuesto y fecha objetivo.</p>
+            <ul>
+              <li>Tipo de proyecto y objetivo</li>
+              <li>Rango de presupuesto</li>
+              <li>Fecha estimada de entrega</li>
+            </ul>
+          </article>
+          <article class="path-card path-card--neutral">
+            <div class="path-card__icon" aria-hidden="true">🤝</div>
+            <h3>Seguimiento</h3>
+            <p>Recibirás confirmación visual al enviar y el registro quedará guardado en Firebase para responderte.</p>
+            <ul>
+              <li>Estado del envío en pantalla</li>
+              <li>Validación según el camino elegido</li>
+              <li>Datos organizados en Firestore</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="contacto" id="contacto">
+        <div class="contacto__header">
+          <p class="contacto__eyebrow">Formulario dinámico</p>
+          <h2>Enviar mensaje</h2>
+          <p>Elige el camino, llena los campos requeridos y guarda todo en Firebase.</p>
+        </div>
+
+        <form id="contactForm" class="contacto__form">
+          <fieldset class="form__group form__group--choices">
+            <legend>¿Cómo querés trabajar?</legend>
+            <label class="choice">
+              <input type="radio" name="interestType" value="empresa" checked />
+              <span>Represento a una empresa</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="interestType" value="freelance" />
+              <span>Busco apoyo freelance</span>
+            </label>
+          </fieldset>
+
+          <div class="form__grid">
+            <label class="field">
+              <span>Nombre completo</span>
+              <input type="text" name="fullName" autocomplete="name" required />
+            </label>
+            <label class="field">
+              <span>Correo</span>
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label class="field">
+              <span>Teléfono</span>
+              <input type="tel" name="phone" autocomplete="tel" placeholder="+506 0000-0000" />
+            </label>
+            <label class="field">
+              <span>Preferencia de contacto</span>
+              <select name="contactPreference">
+                <option value="email" selected>Correo</option>
+                <option value="telefono">Llamada</option>
+                <option value="whatsapp">WhatsApp</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form__subset" id="companyFields">
+            <p class="subset__title">Camino: Empresa</p>
+            <div class="form__grid form__grid--subset">
+              <label class="field">
+                <span>Empresa</span>
+                <input type="text" name="companyName" data-required="true" />
+              </label>
+              <label class="field">
+                <span>Rol o departamento</span>
+                <input type="text" name="role" data-required="true" />
+              </label>
+              <label class="field">
+                <span>Tamaño del equipo</span>
+                <select name="teamSize" data-required="true">
+                  <option value="" disabled selected>Seleccioná</option>
+                  <option value="1-10">1-10</option>
+                  <option value="11-50">11-50</option>
+                  <option value="51-200">51-200</option>
+                  <option value="200+">200+</option>
+                </select>
+              </label>
+              <label class="field field--full">
+                <span>Descripción de vacante o reto</span>
+                <textarea name="companyNeed" rows="3" data-required="true" placeholder="Tecnologías, objetivos o responsabilidades"></textarea>
+              </label>
+            </div>
+          </div>
+
+          <div class="form__subset" id="freelanceFields" hidden>
+            <p class="subset__title">Camino: Proyecto freelance</p>
+            <div class="form__grid form__grid--subset">
+              <label class="field">
+                <span>Nombre del proyecto</span>
+                <input type="text" name="projectName" data-required="true" />
+              </label>
+              <label class="field">
+                <span>Tipo de proyecto</span>
+                <select name="projectType" data-required="true">
+                  <option value="" disabled selected>Seleccioná</option>
+                  <option value="web">Sitio web / Landing</option>
+                  <option value="app">Aplicación web</option>
+                  <option value="api">API o backend</option>
+                  <option value="data">Datos / dashboards</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Fecha objetivo</span>
+                <input type="date" name="timeline" data-required="true" />
+              </label>
+              <label class="field">
+                <span>Presupuesto</span>
+                <select name="budget" data-required="true">
+                  <option value="" disabled selected>Seleccioná</option>
+                  <option value="menos-500">Menos de $500</option>
+                  <option value="500-1500">$500 - $1500</option>
+                  <option value="1500-3000">$1500 - $3000</option>
+                  <option value="3000+">$3000 o más</option>
+                </select>
+              </label>
+              <label class="field field--full">
+                <span>Alcance y entregables</span>
+                <textarea name="projectScope" rows="3" data-required="true" placeholder="Páginas, integraciones, APIs, etc."></textarea>
+              </label>
+            </div>
+          </div>
+
+          <label class="field field--full">
+            <span>Mensaje adicional</span>
+            <textarea name="message" rows="4" placeholder="Compartí contexto o enlaces de referencia"></textarea>
+          </label>
+
+          <div class="form__actions">
+            <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+            <button type="submit" class="btn">Enviar a Firebase</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script type="module">
+      import {
+        db,
+        addDoc,
+        collection,
+        serverTimestamp,
+      } from "../js/firebase-init.js";
+
+      const form = document.getElementById("contactForm");
+      const typeInputs = form.querySelectorAll('input[name="interestType"]');
+      const companyFields = document.getElementById("companyFields");
+      const freelanceFields = document.getElementById("freelanceFields");
+      const statusEl = document.getElementById("formStatus");
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      const toggleRequired = (container, isRequired) => {
+        container
+          .querySelectorAll("[data-required]")
+          .forEach((field) => (field.required = isRequired));
+      };
+
+      const handlePathToggle = () => {
+        const selected = form.interestType.value;
+        const isEmpresa = selected === "empresa";
+        companyFields.hidden = !isEmpresa;
+        freelanceFields.hidden = isEmpresa;
+        toggleRequired(companyFields, isEmpresa);
+        toggleRequired(freelanceFields, !isEmpresa);
+      };
+
+      typeInputs.forEach((input) =>
+        input.addEventListener("change", handlePathToggle)
+      );
+      handlePathToggle();
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        statusEl.textContent = "Enviando tu mensaje...";
+        statusEl.className = "form-status form-status--pending";
+        submitBtn.disabled = true;
+
+        const formData = new FormData(form);
+        const choice = formData.get("interestType");
+        const payload = {
+          interestType: choice,
+          fullName: (formData.get("fullName") || "").trim(),
+          email: (formData.get("email") || "").trim(),
+          phone: (formData.get("phone") || "").trim(),
+          message: (formData.get("message") || "").trim(),
+          contactPreference: formData.get("contactPreference") || "email",
+          createdAt: serverTimestamp(),
+        };
+
+        if (choice === "empresa") {
+          payload.company = {
+            name: (formData.get("companyName") || "").trim(),
+            role: (formData.get("role") || "").trim(),
+            teamSize: formData.get("teamSize") || "",
+            need: (formData.get("companyNeed") || "").trim(),
+          };
+        } else {
+          payload.freelance = {
+            projectName: (formData.get("projectName") || "").trim(),
+            projectType: formData.get("projectType") || "",
+            timeline: formData.get("timeline") || "",
+            budget: formData.get("budget") || "",
+            scope: (formData.get("projectScope") || "").trim(),
+          };
+        }
+
+        try {
+          await addDoc(collection(db, "contactRequests"), payload);
+          statusEl.textContent = "¡Listo! Tu mensaje se guardó en Firebase.";
+          statusEl.className = "form-status form-status--success";
+          form.reset();
+          handlePathToggle();
+        } catch (error) {
+          console.error("Error al guardar en Firebase", error);
+          statusEl.textContent = "No pudimos enviar el formulario. Intenta de nuevo.";
+          statusEl.className = "form-status form-status--error";
+        } finally {
+          submitBtn.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>
